@@ -1,0 +1,185 @@
+---
+title: "SummerFlounder_DADA2"
+author: "Katrina Lohan"
+date: '2022-11-08'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```
+##For analyzing SummerFlounder COI sequences 
+```
+```{r}
+library(ape)
+library(vegan)
+library(ggplot2)
+library(picante)
+library(plyr)
+library(dada2); packageVersion("dada2")
+```
+
+```{r}
+#Following tutorial for DADA2 at: https://benjjneb.github.io/dada2/tutorial.html
+#On second pass followed tutorial for ITS1 because it contains info to remove primers:
+#https://benjjneb.github.io/dada2/ITS_workflow.html
+list.files(getwd())
+path <- "~/Dropbox (Smithsonian)/SummerFlounderDiet/COI_Analyses/RawReads/" #directory with the fastq files after unzipping
+list.files(path)
+
+```
+```{r}
+# Forward and reverse fastq filenames have format: SAMPLENAME_R1_001.fastq and SAMPLENAME_R2_001.fastq
+fnFs <- sort(list.files(path, pattern="_R1_001.fastq", full.names = TRUE))
+fnRs <- sort(list.files(path, pattern="_R2_001.fastq", full.names = TRUE))
+
+```
+
+```{r}
+#Primers removed with cutadapt, run separately in terminal
+#Read the trimmed sequence files in
+path2 = "~/Dropbox (Smithsonian)/SummerFlounderDiet/COI_Analyses/trimmed/"
+cutFs <- sort(list.files(path2, pattern = "_R1_001_trim.fastq", full.names = TRUE))
+cutRs <- sort(list.files(path2, pattern = "_R2_001_trim.fastq", full.names = TRUE))
+
+get.sample.name <- function(fname) strsplit(basename(fname), "_")[[1]][1]
+sample.names <- unname(sapply(cutFs, get.sample.name))
+head(sample.names)
+```
+```{r}
+#Check the quality of reads in the sequences with the primers removed
+plotQualityProfile(cutFs[10:12])
+plotQualityProfile(cutRs[11:12])
+```
+```{r}
+# Place primer trimmed, filtered files in filtered/ subdirectory, to be stored as fastq.gz files
+filtFs <- file.path(path2, "filtered", basename(cutFs))
+filtRs <- file.path(path2, "filtered", basename(cutRs))
+```
+
+```{r}
+#Removing spurious small sequences and phix
+#out4 = maxEE=4
+#Used out5 output to continue
+out4 <- filterAndTrim(cutFs, filtFs, cutRs, filtRs, maxN = 0, maxEE = c(4, 4), 
+                     truncQ = 2, minLen = 50, rm.phix = TRUE, compress = TRUE, multithread = TRUE)
+out4
+```
+
+```{r}
+out5 <- filterAndTrim(cutFs, filtFs, cutRs, filtRs, maxN = 0, maxEE = c(5, 5), 
+                     truncQ = 2, minLen = 50, rm.phix = TRUE, compress = TRUE, multithread = TRUE)
+out5
+```
+```{r}
+# The DADA2 algorithm makes use of a parametric error model (err) and every amplicon dataset has a different set of error rates. The learnErrors method learns this error model from the data, by alternating estimation of the error rates and inference of sample composition until they converge on a jointly consistent solution. As in many machine-learning problems, the algorithm must begin with an initial guess, for which the maximum possible error rates in this data are used (the error rates if only the most abundant sequence is correct and all the rest are errors).
+errF <- learnErrors(filtFs, multithread=TRUE)
+
+```
+
+```{r}
+errR <- learnErrors(filtRs, multithread=TRUE)
+
+```
+
+```{r}
+#To explore the errors in base switching
+plotErrors(errF, nominalQ=TRUE)
+
+# Explanation of plot: The error rates for each possible transition (A→C, A→G, …) are shown. 
+# Points are the observed error rates for each consensus quality score. 
+# The black line shows the estimated error rates after convergence of the machine-learning algorithm. 
+# The red line shows the error rates expected under the nominal definition of the Q-score. 
+# The errors don't quite line up with the expected, which is a bit odd, but do decrease
+```
+
+```{r}
+#Sample inference- look at core sample inference algorithm described in paper
+#Dereplication exhausted the memory, so I'm going to skip that step
+dadaFs <- dada(filtFs, err=errF, multithread=TRUE)
+dadaRs <- dada(filtRs, err=errR, multithread=TRUE)
+```
+
+```{r}
+#To look at returned dada-class object:
+dadaFs[[12]]#Changed this to different sample as the first is negative control
+```
+```{r}
+dadaRs[[12]]
+```
+
+```{r}
+#Now to merge the sequences
+# By default, merged sequences are only output if the forward and reverse reads overlap by at least 12 bases, 
+# and are identical to each other in the overlap region (but these conditions can be changed via function arguments).
+#As the overlap region for these should be large (>50 bp), I'm going to allow for a lot more mismatches
+#as I would have if I were doing this in usearch.
+
+mergers <- mergePairs(dadaFs, filtFs, dadaRs, filtRs, verbose=TRUE, maxMismatch = 10)
+```
+
+```{r}
+#To make a ASV table
+SFCOIseqtab <- makeSequenceTable(mergers)
+dim(SFCOIseqtab) #110 20165
+
+```
+```{r}
+# Inspect distribution of sequence lengths
+table(nchar(getSequences(SFCOIseqtab)))
+```
+```{r}
+#A number of these sequences are WAY too small or large to be correct, so I'm going to trim them out.
+#Keeping sequences between 307 and 318 bp, based on output
+SFCOIseqtab2 <- SFCOIseqtab[,nchar(colnames(SFCOIseqtab)) %in% 307:318]
+dim(SFCOIseqtab2)#176 1919
+table(nchar(getSequences(SFCOIseqtab2)))
+```
+
+```{r}
+#Remove chimeras
+SFCOIseqtab.nochim <- removeBimeraDenovo(SFCOIseqtab2, method="consensus", multithread=TRUE, verbose=TRUE)
+```
+
+```{r}
+dim(SFCOIseqtab.nochim)
+```
+
+```{r}
+sum(SFCOIseqtab.nochim)/sum(SFCOIseqtab2)#less that 2% of the sequences were chimeras
+```
+
+```{r}
+#Final check allows you to track reads through the pipeline
+getN <- function(x) sum(getUniques(x))
+track <- cbind(out5, sapply(dadaFs, getN), sapply(dadaRs, getN), sapply(mergers, getN), rowSums(SFCOIseqtab.nochim))
+# If processing a single sample, remove the sapply calls: e.g. replace sapply(dadaFs, getN) with getN(dadaFs)
+colnames(track) <- c("reads.in",	"reads.out",	"denoisedF",	"denoisedR",	"merged",	"nochim")
+rownames(track) <- sample.names
+track
+
+```
+
+```{r}
+write.csv(track, "~/Dropbox (Smithsonian)/SummerFlounderDiet/COI_Analyses/SFCOI_trackedseqs.csv")
+#results of track saved in excel document
+```
+
+```{r}
+write.csv(SFCOIseqtab.nochim, "~/Dropbox (Smithsonian)/SummerFlounderDiet/COI_Analyses/SFCOI_ASVtable.csv")
+#need to create metadata file for further analyses
+#need to conduct taxonomic assignment as for other COI using CBBI then NR and merging results into a single file
+```
+
+```{r}
+uniquesToFasta(getUniques(SFCOIseqtab.nochim), fout="~/Dropbox (Smithsonian)/SummerFlounderDiet/COI_Analyses/SFCOI_UniqueSeqs_4ID.fasta", ids=paste0("Seq", seq(length(getUniques(SFCOIseqtab.nochim)))))
+#for BLAST hits in Geneious -- 
+#did megablast of CBBI then nr database through geneious. Only accepted taxonomic assignments if query coverage >80% and pairwise identity was >85% -- all others call Eukaryota
+#results from both were compared and CBBI kept if discrepancies
+```
+

@@ -1,0 +1,3 @@
+"0","write.csv(SFCOIseqtab.nochim, ""~/Dropbox (Smithsonian)/SummerFlounderDiet/COI_Analyses/SFCOI_ASVtable.csv"")"
+"0","#need to create metadata file for further analyses"
+"0","#need to conduct taxonomic assignment as for other COI using CBBI then NR and merging results into a single file"

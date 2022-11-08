@@ -1,0 +1,3 @@
+"0","#Check the quality of reads in the sequences with the primers removed"
+"0","plotQualityProfile(cutFs[10:12])"
+"2","Warning: `guides(<scale> = FALSE)` is deprecated. Please use `guides(<scale> = ""none"")` instead."

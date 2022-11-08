@@ -1,0 +1,441 @@
+"0","#Now to merge the sequences"
+"0","# By default, merged sequences are only output if the forward and reverse reads overlap by at least 12 bases, "
+"0","# and are identical to each other in the overlap region (but these conditions can be changed via function arguments)."
+"0","#As the overlap region for these should be large (>50 bp), I'm going to allow for a lot more mismatches"
+"0","#as I would have if I were doing this in usearch."
+"0",""
+"0","mergers <- mergePairs(dadaFs, filtFs, dadaRs, filtRs, verbose=TRUE, maxMismatch = 10)"
+"2","689 paired-reads (in 5 unique pairings) successfully merged out of 689 (in 5 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","367 paired-reads (in 6 unique pairings) successfully merged out of 367 (in 6 pairings) input.
+"
+"2","421 paired-reads (in 5 unique pairings) successfully merged out of 527 (in 6 pairings) input.
+"
+"2","130 paired-reads (in 1 unique pairings) successfully merged out of 130 (in 1 pairings) input.
+"
+"2","58308 paired-reads (in 253 unique pairings) successfully merged out of 58310 (in 255 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","55031 paired-reads (in 36 unique pairings) successfully merged out of 55114 (in 40 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","17955 paired-reads (in 36 unique pairings) successfully merged out of 18012 (in 55 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","65516 paired-reads (in 1169 unique pairings) successfully merged out of 65788 (in 1273 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","42984 paired-reads (in 45 unique pairings) successfully merged out of 43126 (in 74 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","133153 paired-reads (in 56 unique pairings) successfully merged out of 133273 (in 70 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","91440 paired-reads (in 57 unique pairings) successfully merged out of 91451 (in 66 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","43646 paired-reads (in 27 unique pairings) successfully merged out of 43651 (in 30 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","208407 paired-reads (in 73 unique pairings) successfully merged out of 208469 (in 92 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","24902 paired-reads (in 38 unique pairings) successfully merged out of 24988 (in 45 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","13161 paired-reads (in 14 unique pairings) successfully merged out of 13227 (in 18 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","45101 paired-reads (in 24 unique pairings) successfully merged out of 45187 (in 28 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","80673 paired-reads (in 81 unique pairings) successfully merged out of 80805 (in 93 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","54681 paired-reads (in 66 unique pairings) successfully merged out of 54837 (in 76 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","76724 paired-reads (in 69 unique pairings) successfully merged out of 76847 (in 80 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","16064 paired-reads (in 65 unique pairings) successfully merged out of 16206 (in 76 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","84284 paired-reads (in 71 unique pairings) successfully merged out of 84416 (in 95 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","101069 paired-reads (in 64 unique pairings) successfully merged out of 101149 (in 78 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","42820 paired-reads (in 37 unique pairings) successfully merged out of 42913 (in 47 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","135685 paired-reads (in 62 unique pairings) successfully merged out of 135767 (in 73 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","129636 paired-reads (in 114 unique pairings) successfully merged out of 129647 (in 121 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","129120 paired-reads (in 204 unique pairings) successfully merged out of 129150 (in 216 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","67909 paired-reads (in 331 unique pairings) successfully merged out of 67947 (in 345 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","45505 paired-reads (in 179 unique pairings) successfully merged out of 45542 (in 194 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","82286 paired-reads (in 76 unique pairings) successfully merged out of 82297 (in 82 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","45289 paired-reads (in 76 unique pairings) successfully merged out of 45311 (in 83 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","22806 paired-reads (in 48 unique pairings) successfully merged out of 22810 (in 50 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","33163 paired-reads (in 141 unique pairings) successfully merged out of 33173 (in 144 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","166555 paired-reads (in 154 unique pairings) successfully merged out of 166637 (in 202 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","111736 paired-reads (in 315 unique pairings) successfully merged out of 111836 (in 378 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","111644 paired-reads (in 347 unique pairings) successfully merged out of 111733 (in 366 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","65057 paired-reads (in 161 unique pairings) successfully merged out of 65107 (in 167 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","77574 paired-reads (in 40 unique pairings) successfully merged out of 77595 (in 46 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","63202 paired-reads (in 52 unique pairings) successfully merged out of 63247 (in 69 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","42863 paired-reads (in 101 unique pairings) successfully merged out of 42915 (in 118 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","27588 paired-reads (in 160 unique pairings) successfully merged out of 27592 (in 163 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","55905 paired-reads (in 37 unique pairings) successfully merged out of 55952 (in 53 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","128289 paired-reads (in 448 unique pairings) successfully merged out of 128440 (in 494 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","131505 paired-reads (in 147 unique pairings) successfully merged out of 131544 (in 160 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","90416 paired-reads (in 88 unique pairings) successfully merged out of 90680 (in 104 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","133389 paired-reads (in 152 unique pairings) successfully merged out of 133453 (in 160 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","76293 paired-reads (in 54 unique pairings) successfully merged out of 76352 (in 72 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","146505 paired-reads (in 95 unique pairings) successfully merged out of 146526 (in 102 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","88832 paired-reads (in 127 unique pairings) successfully merged out of 88891 (in 139 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","23553 paired-reads (in 77 unique pairings) successfully merged out of 23651 (in 116 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","70115 paired-reads (in 104 unique pairings) successfully merged out of 70119 (in 107 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","117302 paired-reads (in 42 unique pairings) successfully merged out of 117339 (in 46 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","70418 paired-reads (in 53 unique pairings) successfully merged out of 70430 (in 59 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","54374 paired-reads (in 28 unique pairings) successfully merged out of 54380 (in 32 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","98392 paired-reads (in 166 unique pairings) successfully merged out of 98528 (in 182 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","98902 paired-reads (in 202 unique pairings) successfully merged out of 98948 (in 216 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","78593 paired-reads (in 276 unique pairings) successfully merged out of 78725 (in 349 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","79898 paired-reads (in 127 unique pairings) successfully merged out of 79927 (in 137 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","80520 paired-reads (in 48 unique pairings) successfully merged out of 80622 (in 53 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","40960 paired-reads (in 59 unique pairings) successfully merged out of 40961 (in 60 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","67427 paired-reads (in 136 unique pairings) successfully merged out of 67437 (in 138 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","74010 paired-reads (in 95 unique pairings) successfully merged out of 74026 (in 98 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","122446 paired-reads (in 151 unique pairings) successfully merged out of 122541 (in 168 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","58334 paired-reads (in 139 unique pairings) successfully merged out of 58384 (in 154 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","72618 paired-reads (in 47 unique pairings) successfully merged out of 72658 (in 64 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","80120 paired-reads (in 63 unique pairings) successfully merged out of 80127 (in 66 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","128257 paired-reads (in 112 unique pairings) successfully merged out of 128317 (in 135 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","253905 paired-reads (in 180 unique pairings) successfully merged out of 253945 (in 205 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","233198 paired-reads (in 283 unique pairings) successfully merged out of 233452 (in 385 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","232644 paired-reads (in 226 unique pairings) successfully merged out of 232963 (in 386 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","180325 paired-reads (in 3767 unique pairings) successfully merged out of 180990 (in 4178 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","256683 paired-reads (in 145 unique pairings) successfully merged out of 256816 (in 187 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","60653 paired-reads (in 55 unique pairings) successfully merged out of 60713 (in 62 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","59407 paired-reads (in 47 unique pairings) successfully merged out of 59509 (in 65 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","125701 paired-reads (in 88 unique pairings) successfully merged out of 125744 (in 99 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","99393 paired-reads (in 75 unique pairings) successfully merged out of 99484 (in 81 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","182352 paired-reads (in 278 unique pairings) successfully merged out of 182424 (in 320 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","205974 paired-reads (in 57 unique pairings) successfully merged out of 205985 (in 64 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","174013 paired-reads (in 500 unique pairings) successfully merged out of 174207 (in 624 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","145248 paired-reads (in 75 unique pairings) successfully merged out of 145277 (in 96 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","189659 paired-reads (in 39 unique pairings) successfully merged out of 189677 (in 42 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","227183 paired-reads (in 10431 unique pairings) successfully merged out of 227666 (in 10651 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","44255 paired-reads (in 23 unique pairings) successfully merged out of 44337 (in 31 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","76697 paired-reads (in 51 unique pairings) successfully merged out of 76698 (in 52 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","221514 paired-reads (in 198 unique pairings) successfully merged out of 221574 (in 233 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","98633 paired-reads (in 47 unique pairings) successfully merged out of 98635 (in 49 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","156984 paired-reads (in 93 unique pairings) successfully merged out of 157073 (in 102 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","54057 paired-reads (in 49 unique pairings) successfully merged out of 54113 (in 55 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","241103 paired-reads (in 140 unique pairings) successfully merged out of 241276 (in 149 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","86745 paired-reads (in 98 unique pairings) successfully merged out of 86797 (in 109 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","62017 paired-reads (in 55 unique pairings) successfully merged out of 62040 (in 58 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","149959 paired-reads (in 907 unique pairings) successfully merged out of 150332 (in 1099 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","160428 paired-reads (in 81 unique pairings) successfully merged out of 160450 (in 90 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","203891 paired-reads (in 40 unique pairings) successfully merged out of 203900 (in 43 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","192696 paired-reads (in 53 unique pairings) successfully merged out of 192759 (in 57 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","88776 paired-reads (in 92 unique pairings) successfully merged out of 88776 (in 92 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","198769 paired-reads (in 213 unique pairings) successfully merged out of 198858 (in 236 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","56697 paired-reads (in 47 unique pairings) successfully merged out of 56699 (in 49 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","64616 paired-reads (in 31 unique pairings) successfully merged out of 64623 (in 36 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","162070 paired-reads (in 69 unique pairings) successfully merged out of 162100 (in 79 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","125685 paired-reads (in 112 unique pairings) successfully merged out of 125700 (in 118 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","48530 paired-reads (in 50 unique pairings) successfully merged out of 48568 (in 56 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","148409 paired-reads (in 73 unique pairings) successfully merged out of 148457 (in 82 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","114697 paired-reads (in 97 unique pairings) successfully merged out of 114825 (in 107 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","212408 paired-reads (in 87 unique pairings) successfully merged out of 212525 (in 98 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","29785 paired-reads (in 19 unique pairings) successfully merged out of 29882 (in 22 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","157494 paired-reads (in 138 unique pairings) successfully merged out of 157557 (in 154 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","134400 paired-reads (in 174 unique pairings) successfully merged out of 134476 (in 180 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","92624 paired-reads (in 58 unique pairings) successfully merged out of 92646 (in 64 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","214092 paired-reads (in 75 unique pairings) successfully merged out of 214149 (in 81 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"
+"2","138309 paired-reads (in 77 unique pairings) successfully merged out of 138315 (in 80 pairings) input.
+"
+"2","Duplicate sequences in merged output.
+"

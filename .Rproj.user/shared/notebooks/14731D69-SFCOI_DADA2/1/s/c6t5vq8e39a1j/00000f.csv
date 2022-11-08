@@ -1,0 +1,13 @@
+"0","errR <- learnErrors(filtRs, multithread=TRUE)"
+"1","104358059"
+"1"," "
+"1","total bases in"
+"1"," "
+"1","392082"
+"1"," "
+"1","reads from"
+"1"," "
+"1","9"
+"1"," "
+"1","samples will be used for learning the error rates.
+"

@@ -1,0 +1,3 @@
+"0","# Place primer trimmed, filtered files in filtered/ subdirectory, to be stored as fastq.gz files"
+"0","filtFs <- file.path(path2, ""filtered"", basename(cutFs))"
+"0","filtRs <- file.path(path2, ""filtered"", basename(cutRs))"

@@ -1,0 +1,29 @@
+"0","library(ape)"
+"2","Warning: package ‘ape’ was built under R version 4.0.5"
+"0","library(vegan)"
+"2","Warning: package ‘vegan’ was built under R version 4.0.2"
+"2","Loading required package: permute
+"
+"2","Loading required package: lattice
+"
+"2","This is vegan 2.5-7
+"
+"0","library(ggplot2)"
+"2","Registered S3 methods overwritten by 'tibble':
+  method     from  
+  format.tbl pillar
+  print.tbl  pillar
+"
+"0","library(picante)"
+"2","Loading required package: nlme
+"
+"0","library(plyr)"
+"2","Warning: package ‘plyr’ was built under R version 4.0.5"
+"0","library(dada2); packageVersion(""dada2"")"
+"2","Loading required package: Rcpp
+"
+"2","Warning: package ‘Rcpp’ was built under R version 4.0.5"
+"1","[1]"
+"1"," ‘1.16.0’"
+"1","
+"

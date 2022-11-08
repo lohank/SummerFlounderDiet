@@ -1,0 +1,4 @@
+"0","# Forward and reverse fastq filenames have format: SAMPLENAME_R1_001.fastq and SAMPLENAME_R2_001.fastq"
+"0","fnFs <- sort(list.files(path, pattern=""_R1_001.fastq"", full.names = TRUE))"
+"0","fnRs <- sort(list.files(path, pattern=""_R2_001.fastq"", full.names = TRUE))"
+"0",""

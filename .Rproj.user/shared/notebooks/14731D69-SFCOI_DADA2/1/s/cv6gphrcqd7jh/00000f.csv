@@ -1,0 +1,2 @@
+"0","uniquesToFasta(getUniques(SFCOIseqtab.nochim), fout=""~/Dropbox (Smithsonian)/SummerFlounderDiet/COI_Analyses/SFCOI_UniqueSeqs_4ID.fasta"", ids=paste0(""Seq"", seq(length(getUniques(SFCOIseqtab.nochim)))))"
+"0","#for BLAST hits in Geneious -- did megablast of nr database through geneious. Only accepted taxonomic assignments if query coverage >80% and pairwise identity was >85% -- all others call Eukaryota"

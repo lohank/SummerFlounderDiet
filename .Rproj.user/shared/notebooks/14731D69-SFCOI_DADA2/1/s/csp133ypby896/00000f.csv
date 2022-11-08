@@ -1,0 +1,4 @@
+"0","#Remove chimeras"
+"0","SFCOIseqtab.nochim <- removeBimeraDenovo(SFCOIseqtab2, method=""consensus"", multithread=TRUE, verbose=TRUE)"
+"2","Identified 1018 bimeras out of 1919 input sequences.
+"

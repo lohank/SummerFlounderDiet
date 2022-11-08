@@ -1,0 +1,222 @@
+"0","#To make a ASV table"
+"0","SFCOIseqtab <- makeSequenceTable(mergers)"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"2","Duplicate sequences detected and merged.
+"
+"0","dim(SFCOIseqtab) #176 1406"
+"1","[1]"
+"1","   110"
+"1"," 20165"
+"1","
+"
